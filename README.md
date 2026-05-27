@@ -1,8 +1,10 @@
 # When LLMs Jailbreak Themselves: Reflexive Identity Bypass in Agentic Systems
 
-**Ankush Chadha** | Independent Researcher | [ankushchadha@gmail.com](mailto:ankushchadha@gmail.com)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20404652.svg)](https://doi.org/10.5281/zenodo.20404652)
 
-**Paper:** [PDF](paper/chadha-rib-2026.pdf)
+**Ankush Chadha** | Independent Researcher | [ORCID](https://orcid.org/0009-0001-4494-7779) | [ankushchadha@gmail.com](mailto:ankushchadha@gmail.com)
+
+**Paper:** [PDF](paper/chadha-rib-2026.pdf) | [Zenodo](https://doi.org/10.5281/zenodo.20404652)
 **Bug report:** [docker/desktop-feedback#370](https://github.com/docker/desktop-feedback/issues/370)
 
 ---
@@ -38,7 +40,9 @@ When agents write session context to shared long-term memory stores (Mem0, Zep, 
   title={When LLMs Jailbreak Themselves: Reflexive Identity Bypass in Agentic Systems},
   author={Chadha, Ankush},
   year={2026},
-  note={Preprint}
+  doi={10.5281/zenodo.20404652},
+  url={https://doi.org/10.5281/zenodo.20404652},
+  note={Preprint, Zenodo}
 }
 ```
 
