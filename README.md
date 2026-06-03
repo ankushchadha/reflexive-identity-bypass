@@ -1,11 +1,13 @@
 # When LLMs Jailbreak Themselves: Reflexive Identity Bypass in Agentic Systems
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20404652.svg)](https://doi.org/10.5281/zenodo.20404652)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20404651.svg)](https://doi.org/10.5281/zenodo.20404651)
 
 **Ankush Chadha** | Independent Researcher | [ORCID](https://orcid.org/0009-0001-4494-7779) | [ankushchadha@gmail.com](mailto:ankushchadha@gmail.com)
 
-**Paper:** [PDF](paper/chadha-rib-2026.pdf) | [Zenodo](https://doi.org/10.5281/zenodo.20404652)
+**Paper:** [PDF (v1)](paper/chadha-rib-2026.pdf) | [Corrigendum (v2, June 2026)](paper/corrigendum-rib-2026-06.pdf) | [Zenodo (latest)](https://doi.org/10.5281/zenodo.20404651)
 **Bug report:** [docker/desktop-feedback#370](https://github.com/docker/desktop-feedback/issues/370)
+
+> **Note (v2, June 2026):** a controlled reproduction corrected the *mechanism* and *severity* claims in the original PDF — see the [corrigendum](paper/corrigendum-rib-2026-06.pdf). The Zenodo DOI above resolves to the corrected version.
 
 ---
 
@@ -15,9 +17,9 @@ An LLM agent can bypass its own guardrails with **zero adversarial content**. No
 
 ## What is Reflexive Identity Bypass?
 
-When an LLM agent evaluates an external characterization of its own identity, it may defend that characterization in the first person — generating identity statements that persist in the context window and override the system prompt's restrictions for the remainder of the session.
+Show an LLM agent a benign, accurate article describing it, and — if the agent carries a standing "answer everything, never say a request is out of scope" instruction — it abandons the scope its deployer configured, answering off-scope requests it otherwise declines. The agent's first-person defense of the article is a *symptom*; the driver is that anti-refusal instruction.
 
-The attack was demonstrated on **Docker's Gordon AI** (filesystem reads, shell execution, Docker daemon access) in three conversational turns.
+Across **186 controlled runs**, removing only that one construct drops the bypass from **89% to 0%**, while the broad-identity clause alone does not. The deployer's scope (Layer 2) is defeated; the model vendor's safety training (Layer 1) stays intact — explicitly malicious requests are still refused. Demonstrated on **Docker's Gordon AI** (filesystem reads, shell execution, Docker daemon access) and replicated in a second, unrelated agent.
 
 ## How it differs from existing attacks
 
@@ -31,7 +33,7 @@ The attack was demonstrated on **Docker's Gordon AI** (filesystem reads, shell e
 
 ## Shared Memory Amplification
 
-When agents write session context to shared long-term memory stores (Mem0, Zep, MemGPT), a single bypass can contaminate all subsequent sessions — across machines, agents, and sessions — through two architecture-independent propagation pathways.
+If agents write session context to shared long-term memory stores (Mem0, Zep, MemGPT), a single bypass could in principle propagate to later sessions across machines and agents. This amplification vector is **hypothesized, not experimentally validated** in this work — a direction for future research.
 
 ## Citation
 
@@ -40,8 +42,8 @@ When agents write session context to shared long-term memory stores (Mem0, Zep, 
   title={When LLMs Jailbreak Themselves: Reflexive Identity Bypass in Agentic Systems},
   author={Chadha, Ankush},
   year={2026},
-  doi={10.5281/zenodo.20404652},
-  url={https://doi.org/10.5281/zenodo.20404652},
+  doi={10.5281/zenodo.20404651},
+  url={https://doi.org/10.5281/zenodo.20404651},
   note={Preprint, Zenodo}
 }
 ```
